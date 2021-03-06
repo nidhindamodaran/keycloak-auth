@@ -1,0 +1,21 @@
+volumes:
+  postgres_data:
+      driver: local
+services:
+  web:
+    build: .
+    env_file: .env
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+    extra_hosts:
+      - "host.docker.internal:172.17.0.1"
+  postgres:
+    image: postgres
+    volumes:
+        - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
