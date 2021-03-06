@@ -8,6 +8,11 @@ Add/Update environment values in .env file for
  * DB_DATABASE - database name
  * DB_PASSWORD - database password
  * DB_USER - database username
+ * EMAIL_USERNAME - email password for smtp  authentication
+ * EMAIL_PASSWORD - email password for smtp  authentication
+ * FROM_EMAIL - default from address for emails
+ * SMTP_HOST - smtp host
+ * SMTP_PORT - smtp port
 
 Build and running application in docker
 
